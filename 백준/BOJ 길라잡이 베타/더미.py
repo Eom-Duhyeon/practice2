@@ -28,4 +28,5 @@
 # k = 3
 #
 # print(solution(number, k))
-
+a = [1,2,3,4,5]
+print(*a)
