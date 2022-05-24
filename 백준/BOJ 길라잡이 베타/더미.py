@@ -28,5 +28,11 @@
 # k = 3
 #
 # print(solution(number, k))
-a = [1,2,3,4,5]
-print(*a)
+# import itertools
+#
+# a = [0, 1, 1]
+#
+# print(list(itertools.permutations(a, 3)))
+
+import math
+print(math.ceil(1//2))
