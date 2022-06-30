@@ -22,18 +22,45 @@
 
 #틀린 이유를 알 수 없다.
 
-m, k = map(int, input().split())
+# m, k = map(int, input().split())
+#
+# answer = []
+# deadman = [x for x in range(1, m+1)]
+#
+# num = k-1
+# for i in range(m):
+#     if len(deadman) > num:
+#         answer.append(deadman.pop(num))
+#         num += k-1
+#     else:
+#         num %= len(deadman)
+#         answer.append(deadman.pop(num))
+#         num += k-1
+# print("<", ', '.join(str(i) for i in answer), ">", sep="")
+import collections
 
+n, k = map(int, input().split())
+
+men = collections.deque([int(x) for x in range(1, n+1)])
 answer = []
-deadman = [x for x in range(1, m+1)]
 
-num = k-1
-for i in range(m):
-    if len(deadman) > num:
-        answer.append(deadman.pop(num))
-        num += k-1
+count = 0
+while men:
+    count += 1
+    if count == k:
+        answer.append(men.popleft())
+        count = 0
     else:
-        num %= len(deadman)
-        answer.append(deadman.pop(num))
-        num += k-1
-print("<", ', '.join(str(i) for i in answer), ">", sep="")
+        men.append(men.popleft())
+print("<", ", ".join(str(i) for i in answer), ">", sep="")
+# num = k-1
+# for i in range(n):
+#     if len(men) > num:
+#         answer.append(men.pop(num))
+#         num += k-1
+#     else:
+#         num %= len(men)
+#         answer.append(men.pop(num))
+#         num += k-1
+# print("<", ", ".join(str(i) for i in answer), ">", sep="")
+

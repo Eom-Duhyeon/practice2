@@ -30,28 +30,65 @@
 #~~~~23 에서 3이 맞지 않으면 4로 올릴 수 없다.2를 고친 후 3이 있는 자리를 결정해야 한다.
 # 또한 인덱스 접근법이 좋지 못하다. 그냥 음수 인덱스를 쓰면 더 계산하기 편하다.
 
+# def check(arr):
+#     l = len(arr)
+#     for idx in range(1, l//2 +1):
+#         if arr[-(idx*2):-idx] == arr[-idx:]:
+#             return False
+#     return True
+#
+# def rec(arr):
+#     global  n
+#     if len(arr) == n:
+#         print(arr)
+#         exit()
+#     for i in '123':
+#         if check(arr + str(i)):
+#             rec(arr + str(i))
+#     return
+#
+# n = int(input())
+# rec('1')
+
+
+# n = int(input())
+#
+# def check(arr):
+#     for i in range(1, len(arr)//2+1):
+#         if arr[-(2*i):-i] == arr[-i:]:
+#             return False
+#     return True
+#
+# def rec(arr):
+#     global n
+#     if len(arr) == n:
+#         print(arr)
+#         exit()
+#     for i in "123":
+#         if check(arr + str(i)):
+#             rec(arr+str(i))
+#
+# rec("1")
+
+
+n = int(input())
+
 def check(arr):
-    l = len(arr)
-    for idx in range(1, l//2 +1):
-        if arr[-(idx*2):-idx] == arr[-idx:]:
+    for i in range(1, len(arr)//2+1):
+        if arr[-(2*i):-i] == arr[-i:]:
             return False
     return True
 
 def rec(arr):
-    global  n
-    if len(arr) == n:
+    if n == len(arr):
         print(arr)
         exit()
-    for i in '123':
+
+    for i in "123":
         if check(arr + str(i)):
             rec(arr + str(i))
-    return
 
-n = int(input())
-rec('1')
-
-
-
+rec("1")
 
 
 

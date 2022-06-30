@@ -34,5 +34,16 @@
 #
 # print(list(itertools.permutations(a, 3)))
 
-import math
-print(math.ceil(1//2))
+# import math
+# print(math.ceil(1//2))
+
+# a = [1, 2]
+# a.insert(1, 3)
+# print(a)
+
+# n = [1, 5, "target", 3]
+# print(max(n))
+
+a = "morgan string_compare"
+a = a.split()
+print(a[1])

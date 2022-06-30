@@ -21,18 +21,14 @@ def is_promising(i,j):
 
     return promising
 
-answer = False
 
 def dfs(idx):
-    global answer
-    if answer == True:
-        return
+
 
     if idx == len(zeros):
         for row in sudoku:
             print(*row)
-        answer = True
-        return
+        exit()
     else:
         (i,j) = zeros[idx]
         promising = is_promising(i,j)
