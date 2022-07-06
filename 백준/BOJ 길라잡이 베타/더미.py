@@ -44,6 +44,8 @@
 # n = [1, 5, "target", 3]
 # print(max(n))
 
-a = "morgan string_compare"
-a = a.split()
-print(a[1])
+# a = "morgan string_compare"
+# a = a.split()
+# print(a[1])
+for i in range(3, 4):
+    print("1")

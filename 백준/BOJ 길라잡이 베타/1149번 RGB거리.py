@@ -1,18 +1,18 @@
-import sys
-
-n = int(input())
-
-house = []
-
-for i in range(n):
-    house.append(list(int(x) for x in sys.stdin.readline().split()))
-
-for i in range(1, n):
-    house[i][0] += min(house[i - 1][1], house[i-1][2])
-    house[i][1] += min(house[i - 1][0], house[i - 1][2])
-    house[i][2] += min(house[i - 1][1], house[i - 1][0])
-
-print(min(house[n-1]))
+# import sys
+#
+# n = int(input())
+#
+# house = []
+#
+# for i in range(n):
+#     house.append(list(int(x) for x in sys.stdin.readline().split()))
+#
+# for i in range(1, n):
+#     house[i][0] += min(house[i - 1][1], house[i-1][2])
+#     house[i][1] += min(house[i - 1][0], house[i - 1][2])
+#     house[i][2] += min(house[i - 1][1], house[i - 1][0])
+#
+# print(min(house[n-1]))
 
 """
 3
@@ -31,6 +31,16 @@ print(min(house[n-1]))
 60 66 19
 
 """
+import sys
 
+n = int(sys.stdin.readline())
+house = []
+for i in range(n):
+    house.append(list(map(int, sys.stdin.readline().split())))
 
+for i in range(1, n):
+    house[i][0] += min(house[i - 1][1], house[i - 1][2])
+    house[i][1] += min(house[i - 1][0], house[i - 1][2])
+    house[i][2] += min(house[i - 1][0], house[i - 1][1])
 
+print(min(house[n-1]))
