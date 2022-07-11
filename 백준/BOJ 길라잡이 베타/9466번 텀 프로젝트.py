@@ -1,14 +1,4 @@
-"""
-2
-7
-3 1 3 7 3 4 6
-8
-1 2 3 4 5 6 7 8
 
-출력
-3
-0
-"""
 
 import sys
 sys.setrecursionlimit(100000)
@@ -38,3 +28,16 @@ for _ in range(int(input())):
             dfs(i)
 
     print(length - len(result))
+
+"""
+2
+7
+3 1 3 7 3 4 6
+8
+1 2 3 4 5 6 7 8
+
+출력
+3
+0
+"""
+
